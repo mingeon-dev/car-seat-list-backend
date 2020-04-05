@@ -1,9 +1,9 @@
-const Router = require('koa-router');
-const productsCtrl = require('./products.ctrl');
+import Router from 'koa-router';
+import * as productsCtrl from './products.ctrl';
 
 const products = new Router();
 
 products.get('/', productsCtrl.list);
 products.get('/:id', productsCtrl.detail);
 
-module.exports = products;
+export default products;

@@ -8,11 +8,11 @@ const products = [
   },
 ];
 
-exports.list = (ctx) => {
+export const list = (ctx) => {
   ctx.body = products;
 };
 
-exports.detail = (ctx) => {
+export const detail = (ctx) => {
   const { id } = ctx.params;
   const product = products.find((p) => p.id.toString() === id);
   if (!product) {

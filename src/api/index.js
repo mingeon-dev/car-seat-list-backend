@@ -1,8 +1,8 @@
-const Router = require('koa-router');
-const products = require('./products');
+import Router from 'koa-router';
+import products from './products';
 
 const api = new Router();
 
 api.use('/products', products.routes());
 
-module.exports = api;
+export default api;
