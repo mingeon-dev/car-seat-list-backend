@@ -1,8 +1,8 @@
 const Router = require('koa-router');
-const carseats = require('./carseats');
+const products = require('./products');
 
 const api = new Router();
 
-api.use('/carseats', carseats.routes());
+api.use('/products', products.routes());
 
 module.exports = api;

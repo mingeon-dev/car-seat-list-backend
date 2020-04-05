@@ -1,4 +1,4 @@
-const carseats = [
+const products = [
   {
     id: 1,
     name: '듀얼픽스 i-SIZE',
@@ -9,18 +9,18 @@ const carseats = [
 ];
 
 exports.list = (ctx) => {
-  ctx.body = carseats;
+  ctx.body = products;
 };
 
 exports.detail = (ctx) => {
   const { id } = ctx.params;
-  const carseat = carseats.find((c) => c.id.toString() === id);
-  if (!carseat) {
+  const product = products.find((p) => p.id.toString() === id);
+  if (!product) {
     ctx.status = 404;
     ctx.body = {
       message: '존재하지 않습니다.',
     };
     return;
   }
-  ctx.body = carseat;
+  ctx.body = product;
 };
