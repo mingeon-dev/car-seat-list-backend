@@ -1,26 +1,50 @@
-const products = [
-  {
-    id: 1,
-    name: '듀얼픽스 i-SIZE',
-    country: '독일',
-    price: 1125000,
-    isofix: true,
-  },
-];
+import Product from '../../models/product';
 
-export const list = (ctx) => {
-  ctx.body = products;
+export const add = async (ctx) => {
+  const { name, country, price, isofix } = ctx.request.body;
+  const product = new Product({
+    name,
+    country,
+    price,
+    isofix,
+  });
+  try {
+    await product.save();
+    ctx.body = product;
+  } catch (e) {
+    ctx.throw(500, e);
+  }
 };
 
-export const detail = (ctx) => {
-  const { id } = ctx.params;
-  const product = products.find((p) => p.id.toString() === id);
-  if (!product) {
-    ctx.status = 404;
-    ctx.body = {
-      message: '존재하지 않습니다.',
-    };
-    return;
+export const list = async (ctx) => {
+  try {
+    const products = await Product.find().exec();
+    ctx.body = products;
+  } catch (e) {
+    ctx.throw(500, e);
   }
-  ctx.body = product;
+};
+
+export const detail = async (ctx) => {
+  const { id } = ctx.params;
+  try {
+    const product = await Product.findById(id).exec();
+    if (!product) {
+      ctx.status = 404;
+      return;
+    }
+    ctx.body = product;
+  } catch (e) {
+    ctx.throw(500, e);
+  }
+};
+
+export const remove = async (ctx) => {
+  const { id } = ctx.params;
+  try {
+    await Product.findByIdAndRemove(id).exec();
+    ctx.status = 204;
+  } catch (e) {
+    ctx.throw(500, e);
+  }
 };
