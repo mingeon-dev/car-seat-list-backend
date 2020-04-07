@@ -1,5 +1,6 @@
 import Product from '../../models/product';
 import mongoose from 'mongoose';
+import Joi from 'joi';
 
 const { ObjectId } = mongoose.Types;
 
@@ -13,6 +14,20 @@ export const checkObjectId = (ctx, next) => {
 };
 
 export const add = async (ctx) => {
+  const schema = Joi.object().keys({
+    name: Joi.string().required(),
+    country: Joi.string().required(),
+    price: Joi.number().required(),
+    isofix: Joi.boolean().strict().required(),
+  });
+
+  const result = Joi.validate(ctx.request.body, schema);
+  if (result.error) {
+    ctx.status = 400;
+    ctx.body = result.error;
+    return;
+  }
+
   const { name, country, price, isofix } = ctx.request.body;
   const product = new Product({
     name,
