@@ -44,8 +44,20 @@ export const add = async (ctx) => {
 };
 
 export const list = async (ctx) => {
+  const PER_PAGE = 20;
+  const page = parseInt(ctx.query.page || '1', 10);
+  if (page < 1) {
+    ctx.status = 400;
+    return;
+  }
+
   try {
-    const products = await Product.find().exec();
+    const products = await Product.find()
+      .limit(PER_PAGE)
+      .skip((page - 1) * PER_PAGE)
+      .exec();
+    const productCount = await Product.countDocuments().exec();
+    ctx.set('Last-Page', Math.ceil(productCount / PER_PAGE));
     ctx.body = products;
   } catch (e) {
     ctx.throw(500, e);
