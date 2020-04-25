@@ -6,7 +6,7 @@ const ProductSchema = new Schema({
   name: String,
   country: String,
   price: Number,
-  isofix: Boolean,
+  tags: [String],
 });
 
 const Product = mongoose.model('Product', ProductSchema);

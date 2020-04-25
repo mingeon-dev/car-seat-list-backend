@@ -18,7 +18,7 @@ export const add = async (ctx) => {
     name: Joi.string().required(),
     country: Joi.string().required(),
     price: Joi.number().required(),
-    isofix: Joi.boolean().strict().required(),
+    tags: Joi.array().items(Joi.string()),
   });
 
   const result = Joi.validate(ctx.request.body, schema);
@@ -28,12 +28,12 @@ export const add = async (ctx) => {
     return;
   }
 
-  const { name, country, price, isofix } = ctx.request.body;
+  const { name, country, price, tags } = ctx.request.body;
   const product = new Product({
     name,
     country,
     price,
-    isofix,
+    tags,
   });
   try {
     await product.save();
