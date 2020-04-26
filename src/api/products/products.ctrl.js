@@ -16,6 +16,7 @@ export const checkObjectId = (ctx, next) => {
 export const add = async (ctx) => {
   const schema = Joi.object().keys({
     name: Joi.string().required(),
+    company: Joi.string().required(),
     country: Joi.string().required(),
     price: Joi.number().required(),
     tags: Joi.array().items(Joi.string()),
@@ -28,9 +29,10 @@ export const add = async (ctx) => {
     return;
   }
 
-  const { name, country, price, tags } = ctx.request.body;
+  const { name, company, country, price, tags } = ctx.request.body;
   const product = new Product({
     name,
+    company,
     country,
     price,
     tags,
