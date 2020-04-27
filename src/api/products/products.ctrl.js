@@ -53,12 +53,17 @@ export const list = async (ctx) => {
     return;
   }
 
+  const { tag } = ctx.query;
+  const query = {
+    ...(tag ? { tags: tag } : {}),
+  };
+
   try {
-    const products = await Product.find()
+    const products = await Product.find(query)
       .limit(PER_PAGE)
       .skip((page - 1) * PER_PAGE)
       .exec();
-    const productCount = await Product.countDocuments().exec();
+    const productCount = await Product.countDocuments(query).exec();
     ctx.set('Last-Page', Math.ceil(productCount / PER_PAGE));
     ctx.body = products;
   } catch (e) {
