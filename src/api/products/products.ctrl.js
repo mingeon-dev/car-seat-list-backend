@@ -53,9 +53,10 @@ export const list = async (ctx) => {
     return;
   }
 
-  const { tag } = ctx.query;
+  const { tag, company } = ctx.query;
   const query = {
     ...(tag ? { tags: tag } : {}),
+    ...(company ? { company: company } : {}),
   };
 
   try {
