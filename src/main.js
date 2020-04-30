@@ -5,6 +5,7 @@ import bodyParser from 'koa-bodyparser';
 import mongoose from 'mongoose';
 
 import api from './api';
+import createProducts from './createProducts';
 
 const { PORT, MONGO_URI } = process.env;
 
@@ -16,6 +17,7 @@ mongoose
   })
   .then(() => {
     console.log('Connected to MongoDB');
+    createProducts();
   })
   .catch((e) => {
     console.error(e);
