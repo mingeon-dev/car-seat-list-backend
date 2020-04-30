@@ -7,6 +7,9 @@ const ProductSchema = new Schema({
   company: String,
   country: String,
   price: Number,
+  minAge: Number,
+  maxAge: Number,
+  group: [String],
   tags: [String],
 });
 
