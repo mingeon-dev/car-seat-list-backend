@@ -4,9 +4,10 @@ const { Schema } = mongoose;
 
 const ProductSchema = new Schema({
   name: String,
+  url: String,
+  urlToImage: String,
   company: String,
   country: String,
-  price: Number,
   minAge: Number,
   maxAge: Number,
   group: [String],
