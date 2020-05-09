@@ -1,6 +1,7 @@
 const products = [
   {
     name: '듀얼픽스 i-SIZE',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=22101469157',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2210146/22101469157.20200305101731.jpg?type=f140',
@@ -13,6 +14,7 @@ const products = [
   },
   {
     name: '듀얼픽스2',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=21653970766',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2165397/21653970766.20200103152516.jpg?type=f140',
@@ -25,6 +27,7 @@ const products = [
   },
   {
     name: '어드밴스픽스4',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=19431729283',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_1943172/19431729283.20200403112945.jpg?type=f140',
@@ -37,6 +40,7 @@ const products = [
   },
   {
     name: '롬머키드픽스3',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=22111243385',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2211124/22111243385.20200305105450.jpg?type=f140',
@@ -49,6 +53,7 @@ const products = [
   },
   {
     name: '롬머키드픽스 SL SICT',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=5832316760',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_5832316/5832316760.20191231185034.jpg?type=f140',
@@ -61,6 +66,7 @@ const products = [
   },
   {
     name: '밀레니아',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=13872672187',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_1387267/13872672187.20180326112913.jpg?type=f140',
@@ -73,6 +79,7 @@ const products = [
   },
   {
     name: '메리디안3',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=20909353934',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2090935/20909353934.20191231172148.jpg?type=f140',
@@ -85,6 +92,7 @@ const products = [
   },
   {
     name: '로얄2',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=6855874759',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_6855874/6855874759.20191231180017.jpg?type=f140',
@@ -97,6 +105,7 @@ const products = [
   },
   {
     name: '갤럭시3',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=6855859818',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_6855859/6855859818.20180510140126.jpg?type=f140',
@@ -109,6 +118,7 @@ const products = [
   },
   {
     name: '오메가3',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=20914786977',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2091478/20914786977.20191231173702.jpg?type=f140',
@@ -121,6 +131,7 @@ const products = [
   },
   {
     name: '맥시플러스2',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=6497244289',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_6497244/6497244289.20150625160606.jpg?type=f140',
@@ -133,6 +144,7 @@ const products = [
   },
   {
     name: '어드보케이트',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=10867766659',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_1086776/10867766659.20180611154210.jpg?type=f140',
@@ -145,6 +157,7 @@ const products = [
   },
   {
     name: '하이포인트',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=21654645906',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2165464/21654645906.20200103164134.jpg?type=f140',
@@ -157,6 +170,7 @@ const products = [
   },
   {
     name: '제로원',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=20691356613',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2069135/20691356613.20191231165948.jpg?type=f140',
@@ -169,6 +183,7 @@ const products = [
   },
   {
     name: '몬자노바EVO',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=17696091183',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_1769609/17696091183.20190225110445.jpg?type=f140',
@@ -181,6 +196,7 @@ const products = [
   },
   {
     name: '제로나 Q i-SIZE 플러스',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=17283671123',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_1728367/17283671123.20190130174156.jpg?type=f140',
@@ -193,6 +209,7 @@ const products = [
   },
   {
     name: '제로나 플러스',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=10952853906',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_1095285/10952853906.20200101135829.jpg?type=f140',
@@ -205,6 +222,7 @@ const products = [
   },
   {
     name: '솔루션 Z-FIX 플러스',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=21593992590',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2159399/21593992590.20191224150616.jpg?type=f140',
@@ -217,6 +235,7 @@ const products = [
   },
   {
     name: '솔루션 Z-FIX',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=21593992197',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2159399/21593992197.20191224144022.jpg?type=f140',
@@ -229,6 +248,7 @@ const products = [
   },
   {
     name: '솔루션 Q2-FIX 플러스',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=17086944955',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_1708694/17086944955.20191018143957.jpg?type=f140',
@@ -241,6 +261,7 @@ const products = [
   },
   {
     name: '트랜스포머 테크',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=20985202123',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2098520/20985202123.20191231195254.jpg?type=f140',
@@ -253,6 +274,7 @@ const products = [
   },
   {
     name: '트랜스포머 XT 플러스',
+    likes: 0,
     url: 'https://search.shopping.naver.com/gate.nhn?id=20143146906',
     urlToImage:
       'https://shopping-phinf.pstatic.net/main_2014314/20143146906.20191231191451.jpg?type=f140',

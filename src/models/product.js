@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 
 const ProductSchema = new Schema({
   name: String,
+  likes: Number,
   url: String,
   urlToImage: String,
   company: String,
