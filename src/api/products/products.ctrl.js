@@ -95,3 +95,23 @@ export const remove = async (ctx) => {
     ctx.throw(500, e);
   }
 };
+
+export const like = async (ctx) => {
+  const { id } = ctx.params;
+  try {
+    const product = await Product.findByIdAndUpdate(
+      id,
+      { $inc: { likes: 1 } },
+      {
+        new: true,
+      },
+    ).exec();
+    if (!product) {
+      ctx.status = 404;
+      return;
+    }
+    ctx.body = product;
+  } catch (e) {
+    ctx.throw(500, e);
+  }
+};
